@@ -39,7 +39,7 @@ export default class Investigador {
         .charCodeAt()
         .toString(2)
         .split("")
-        .map((bit, index, arr) =>
+        .forEach((bit, index, arr) =>
           /[0-2]/.test(index)
             ? trozo1.push(bit)
             : new RegExp(`[3-${arr.length - 3}]`).test(index)
@@ -63,7 +63,7 @@ export default class Investigador {
         .charCodeAt()
         .toString(2)
         .split("")
-        .map((bit, index) => {
+        .forEach((bit, index) => {
           if (index !== 0 && index % 2 == 0) bit = `,${bit}`;
           codi.push(bit);
         });
@@ -95,7 +95,7 @@ export default class Investigador {
   apliBts(unis, propiedad) {
     let cod = [],
       formateaBts;
-    unis.map((uni, index) => {
+    unis.forEach((uni, index) => {
       cod.push(
         parseInt(
           propiedad === "emp"
@@ -117,7 +117,7 @@ export default class Investigador {
   } //-------------------------------------------------------------------------
   codDatosDeUnis(u) {
     let cNRes = [];
-    this.apliBts(u, "cNRes").map((elem, index, arr) => {
+    this.apliBts(u, "cNRes").forEach((elem, index, arr) => {
       if (arr.length > 1 && index !== 0 && index % 2 !== 0)
         cNRes.push([elem, arr[index - 1]].join(""));
       else cNRes.push(arr[0]);
