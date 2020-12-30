@@ -1,0 +1,203 @@
+<!--  
+  ape = apellido
+  c = casos
+  ci = cedula
+  cod = codificado/s
+  cont = contiene
+  dec = decodificado/s
+  emp = empleados
+  div/s = <div>/s
+  inp/s = input/s
+  insp = inspeccion
+  inv = investigador/es
+  nom = nombre
+  nres= no resueltos
+  rec = record
+  res= resueltos
+  tab = tabla
+  uni/s = unidad/es
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./CSS/index.css" />
+    <title>Pracial II</title>
+  </head>
+  <body>
+    <header>
+      <h1>Datos del Servicio Secreto</h1>
+    </header>
+
+    <main>
+      <div class="wrapper">
+      <section class="form-de-inv">
+      <input type="button" class="muestra-form-de-inv" value="Ingresar datos"/>
+      <div class="display">
+      <form class="submit-inv">
+        <legend>Registro de Investigadores</legend>
+        <h4>Datos Personales</h4>
+        <input
+          type="text"
+          placeholder="Nombre..."
+          class="inp-de-nom"
+          pattern="^[A-Z][a-z]+(\s+[A-Z]?[a-z]+)*$"
+          title="Solo se permiten letras y espacios en blanco"
+          required
+        />
+        <input
+          type="text"
+          placeholder="Apellido..."
+          class="inp-de-ape"
+          pattern="^[A-Z][a-z]+(\s+[A-Z]?[a-z]+)*$"
+          title="Solo se permiten letras y espacion en blanco"
+          required
+        />
+        <input
+          type="text"
+          placeholder="C.I"
+          class="inp-de-ci"
+          pattern="[0-9]{1,}"
+          title="Solo se permiten numeros"
+          required
+        />
+        <label for="fechaDeIngreso">Fecha de Ingreso a la unidad </label>
+        <input
+          type="date"
+          class="inp-de-fecha"
+          min="2000-01-01"
+          max="2022-01-01"
+          title="Solo fechas superiores al 01/01/2000"
+          required
+        />
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->
+        <div class="cont-divs-de-unis">
+          <h4>Unidades a cargo</h4>
+          <div class="div-de-uni">
+            <input
+              type="text"
+              placeholder="Nombre o Distribucion..."
+              class="nom-de-uni"
+            />
+            <input
+              type="text"
+              placeholder="Numero de empleados..."
+              class="num-de-empleados"
+              title="Solo se permien numeros / Maximo de Empleados: 15"
+              pattern="^([1-9]{1}|[1]{1}[0-5]{1})$"
+              required
+            />
+            <input
+              type="text"
+              placeholder="N. de casos Resueltos..."
+              class="c-resueltos"
+              title="Solo se permiten numeros"
+              pattern="[0-9]{1,}"
+              required
+            />
+            <input
+              type="text"
+              placeholder="N. de casos no Resueltos..."
+              class="c-no-resueltos"
+              title="Solo se permiten numeros"
+              pattern="[0-9]{1,}"
+              required
+            />
+          </div>
+        </div>
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->
+        <div class="cont-btns-add-rem">
+          <input type="button" class="add-inp-de-uni" value="Agrega Unidad" />
+          <input
+            type="button"
+            class="rem-inp-de-uni display"
+            value="Remueve la ultima Unidad"
+          />
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->
+        </div>
+        <input type="submit" class="registrar" value="Registrarse" />
+      </form>
+      <input type="button" class="cerrar" value="Cerrar" />
+      </div>
+      </section>
+      <!---------------------------------------------------------------------->
+      <section class="nuestra-datos-cod-o-dec">
+        <input type="button" class="ver-datos" value="Ver Datos">
+        <div class="display">
+          <div class="bts-datos-cod-o-dec">
+            <input type="button" class="ver-datos-cod"value="Codificados"/>
+            <input type="button" class="ver-datos-dec" value="Decodificados"/>
+          </div>
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->
+          <article class="cont-tab-de-inv display">
+            <table class="tab">
+              <thead>
+                <tr>
+                  <td>C.I</td>
+                  <td>Nombre</td>
+                  <td>Apellido</td>
+                  <td>Fecha de Ingreso</td>
+                  <td>Unidades al mando</td>
+                </tr>
+               </thead>
+              <tbody class="tab-de-inv"></tbody>
+            </table>
+          </article>
+          <input type="button" class="cerrar" value="Cerrar" />
+        </div>
+      </section>
+      <!---------------------------------------------------------------------->
+      <section class="insp-inv-solicitado">
+        <input 
+          type="button" 
+          class="insp-inv" 
+          value="Inspeccionar invertigador"
+        />
+        <div class=" display">
+        <form class="insp">
+          <label for="ci">Ingrese la C.I del investigador a inspeccionar</label>
+          <input
+            type="text"
+            placeholder="C.I"
+            id="ci"
+            class="inp-de-insp"
+            pattern="[0-9]{1,}"
+            title="Solo se permiten numeros / Ingresa una cedula valida"
+            required
+          />
+          <input type="submit" class="inspeccionar" value="Inspeccionar" />
+        </form>
+        <input type="button" class="cerrar" value="Cerrar" />
+        </div>
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->
+        <div class="cont-tab-de-insp display">
+          <table class="tab">
+            <thead>
+              <tr>
+                <td>Nombre de la Unidad</td>
+                <td>casos resueltos</td>
+                <td>casos no resueltos</td>
+                <td>Porcentaje de efectividad</td>
+              </tr>
+            </thead>
+            <tbody class="tab-de-insp"></tbody>
+          </table>
+          <input type="button" class="cerrar" value="Cerrar" />
+        </div>
+      </section>
+      <!---------------------------------------------------------------------->
+      <section class="el-rec">
+        <input
+          type="button"
+          class="inv-con-rec"
+          value="Investigador con más casos resueltos"
+        />
+        <div class="muestra-inv-con-rec display"></div>
+      </section>
+    </div>
+    </main>
+    <script src="./JS/index.js" type="module"></script>
+  </body>
+</html>

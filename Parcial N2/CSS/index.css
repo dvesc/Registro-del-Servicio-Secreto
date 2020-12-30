@@ -1,0 +1,145 @@
+html {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 0.9rem;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+img {
+  margin: auto 10px;
+  height: inherit;
+}
+
+
+header {
+  position: sticky;
+  padding: 0.6rem;
+  background-color:  rgb(81, 69, 145);
+  color: white;
+}
+h1 {
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+main {
+  background-color: rgb(240, 240, 240);
+}
+
+
+section {
+  width: inherit;
+}
+
+
+.wrapper {
+  text-align: center;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+  min-height: 100vh;
+}
+
+
+input[type="button"]{
+  padding: 0.2rem;
+}
+
+
+form {
+  color: #222;
+  margin: 10px auto;
+  width: 60%;
+  border: solid 1px gray;
+  border-radius: 10px
+}
+form * {
+  padding: 0.3rem;
+  margin: 0.1rem auto;
+  display: block;
+  width: 80%;
+}
+legend {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+label{
+  font-size: 0.9rem;
+}
+form div>*{
+  width: 100%;
+}
+form input[type="button"], input[type="submit"]{
+  width: 40%;
+  font-weight: bold;
+  cursor: pointer;
+}
+form input[type="submit"]{
+  border-radius: 10px;
+  margin: 1rem auto;
+  font-size: 1.2rem;
+  border:none;
+  color: white;
+  background-color: rgb(81, 69, 145);
+}
+
+
+.div-de-uni input[type="text"]{
+  font-size: 0.8rem;
+  text-align: center;
+  display: inline;
+}
+.div-de-uni *{
+  width: 30%;
+}
+.cont-btns-add-rem{
+  margin: auto;
+  text-align: center;
+}
+.cont-btns-add-rem *{
+  display: inline;
+  margin: auto;
+}
+.add-inp-de-uni,.rev-inp-de-uni{
+  width: 30%;
+}
+
+.tab{
+  margin: auto;
+  border-collapse: collapse;
+}
+.tab thead{
+  background-color: rgb(81, 69, 145);
+  color: white;
+  font-size: 1.2rem;
+}
+.tab thead td{
+  padding: 0.5rem;
+}
+.tab td{
+  border:1px solid gray;
+}
+
+
+.cerrar{
+  margin: 0.3rem;
+  border-radius: 7px;
+  font-size: 1.2rem;
+  background: rgb(250, 86, 86);
+  color:white;
+  border:none;
+}
+
+.display {
+  display: none;
+}
